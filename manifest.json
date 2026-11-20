@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "minimum_chrome_version": "145",
+  "name": "Iframe Preview Tools",
+  "description": "현재 탭의 iframe 주소와 HTTPS 상태를 확인하고 개발용 프레임을 다시 불러옵니다.",
+  "version": "1.0.0",
+  "permissions": ["activeTab", "scripting", "declarativeNetRequestWithHostAccess"],
+  "optional_host_permissions": ["https://*/*"],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "Iframe Preview Tools",
+    "default_popup": "popup.html"
+  }
+}

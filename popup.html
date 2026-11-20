@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iframe Preview Tools</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <h1>Iframe Preview Tools</h1>
+    <section class="parent" aria-label="부모 페이지">
+      <span>부모 페이지</span>
+      <strong id="parent-origin">확인 중</strong>
+    </section>
+
+    <form id="rule-form">
+      <label for="target">iframe 주소</label>
+      <input id="target" name="target" type="url" inputmode="url" list="frame-urls"
+        placeholder="https://preview.example.com" autocomplete="off" spellcheck="false" required>
+      <datalist id="frame-urls"></datalist>
+      <p id="frame-info" class="hint"></p>
+
+      <div class="actions">
+        <button id="apply" class="primary" type="submit" disabled>현재 탭에 적용</button>
+        <button id="reload" type="button" disabled>iframe 새로고침</button>
+        <button id="clear" type="button" disabled>해제</button>
+      </div>
+    </form>
+
+    <p id="rule-state" class="hint"></p>
+    <p id="status" role="status" aria-live="polite"></p>
+  </main>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

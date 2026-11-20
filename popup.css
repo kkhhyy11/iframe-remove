@@ -1,0 +1,50 @@
+:root {
+  color-scheme: light dark;
+  font: 13px/1.45 "Segoe UI", "Malgun Gothic", system-ui, sans-serif;
+  color: #152235;
+  background: #f6f8fc;
+  --surface: #fff;
+  --line: #c7d2e1;
+  --secondary: #47576b;
+  --primary: #1758af;
+  --warning: #a13d16;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #eef4fc;
+    background: #142035;
+    --surface: #202e45;
+    --line: #5b6f8b;
+    --secondary: #bdcce0;
+    --primary: #1859ad;
+    --warning: #ffb18d;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; inline-size: 390px; max-inline-size: 100vw; }
+main { padding: 18px; }
+h1 { margin: 0 0 14px; font-size: 18px; }
+.parent { display: grid; gap: 3px; margin-bottom: 16px; }
+.parent span, .hint { color: var(--secondary); font-size: 12px; }
+.parent strong, .hint { overflow-wrap: anywhere; }
+label { display: block; margin-bottom: 6px; font-weight: 600; }
+.hint { margin: 6px 0 0; }
+input, button {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+}
+input { width: 100%; }
+.actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+button { cursor: pointer; }
+button:disabled { opacity: .53; cursor: default; }
+button.primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+:focus-visible { outline: 2px solid #5599f2; outline-offset: 2px; }
+#status { margin: 8px 0 0; color: var(--secondary); overflow-wrap: anywhere; }
+#status.warning { color: var(--warning); }
+#status:empty, .hint:empty { display: none; }
